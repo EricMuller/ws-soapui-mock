@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1b27660a-a799-4608-b856-0de47785a7ab" activeEnvironment="Default" name="CalculSAMRetraite_1_20180618" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="324545ee-d0ff-4aa7-ab1b-772881f12227" wsaVersion="NONE" name="CalculerSAMRetraiteSoapBinding" type="wsdl" bindingName="{http://www.cnav.fr/ns/wsdl/rgcu/services/v1}CalculerSAMRetraiteSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/F:/download/WSDL%20&amp;%20XSD/SAMR%202.3/wsdl/fr/cnav/www/ns/wsdl/rgcu/services/v1/CalculSAMRetraite_1_20180618.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\services\v1\CalculSAMRetraite_1_20180618.wsdl"><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\services\v1\CalculSAMRetraite_1_20180618.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculerSAMRetraite" targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/services/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.cnav.fr/ns/wsdl/rgcu/services/v1" xmlns:obj="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:documentation></wsdl:documentation>
+  <!--Types-->
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+      <xs:import namespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" schemaLocation="../../objets/v1/RequeteCalculSAMRetraite.xsd"/>
+      <xs:import namespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" schemaLocation="../../objets/v1/ReponseCalculSAMRetraite.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <!--Messages-->
+  <wsdl:message name="requete">
+    <wsdl:part name="pRequete" element="obj:RequeteCalculSAMRetraite"/>
+  </wsdl:message>
+  <wsdl:message name="reponse">
+    <wsdl:part name="pReponse" element="obj:ReponseCalculSAMRetraite"/>
+  </wsdl:message>
+  <!--Port-->
+  <wsdl:portType name="CalculerSAMRetraiteWS">
+    <wsdl:operation name="calculerSAMRetraite">
+      <wsdl:input message="tns:requete"/>
+      <wsdl:output message="tns:reponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--Binding-->
+  <wsdl:binding name="CalculerSAMRetraiteSoapBinding" type="tns:CalculerSAMRetraiteWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculerSAMRetraite">
+      <soap:operation soapAction="urn:CalculerSAMRetraite"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!--Service-->
+  <wsdl:service name="CalculerSAMRetraite">
+    <wsdl:documentation></wsdl:documentation>
+    <wsdl:port name="CalculerSAMRetraitePort" binding="tns:CalculerSAMRetraiteSoapBinding">
+      <soap:address location="http://127.0.0.1:8080/mocasamr-ws/CalculerSAMRetraite/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\RequeteCalculSAMRetraite.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="Assure.xsd"/>
+  <xs:include schemaLocation="CumulDureeAssurance.xsd"/>
+  <xs:include schemaLocation="PeriodeRegimeAppel.xsd"/>
+  <xs:element name="RequeteCalculSAMRetraite" type="RequeteCalculSAMRetraite"/>
+  <xs:complexType name="RequeteCalculSAMRetraite">
+    <xs:sequence>
+      <xs:element name="codeRegimeAppel" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="typeDroit" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dateEffet" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cumulDureeAssuranceEtranger" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="assure" type="Assure" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dureesAssuranceProratisation" type="CumulDureeAssurance" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="periodes" type="PeriodeRegimeAppel" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\Assure.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="Assure" type="Assure"/>
+  <xs:complexType name="Assure">
+    <xs:sequence>
+      <xs:element name="dateNaissance" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="dateDeces" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\CumulDureeAssurance.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="CumulDureeAssurance" type="CumulDureeAssurance"/>
+  <xs:complexType name="CumulDureeAssurance">
+    <xs:sequence>
+      <xs:element name="nombreTrismestres" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="regime" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\PeriodeRegimeAppel.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="PeriodeRegimeAppel" type="PeriodeRegimeAppel"/>
+  <xs:complexType name="PeriodeRegimeAppel">
+    <xs:sequence>
+      <xs:element name="annee" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="dureeAssuranceCotisee" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="dureeAssuranceCotiseeAssimilee" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <!--Type non défini dans MagicDraw-->
+      <xs:element name="dureeAssuranceRachetee" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="cumulSalaire" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="deviseSalaire" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cumulIJMaternite" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="deviseIJMaternite" minOccurs="0" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\ReponseCalculSAMRetraite.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="Erreur.xsd"/>
+  <xs:include schemaLocation="RejetControleSyntaxiqueSemantique.xsd"/>
+  <xs:include schemaLocation="ReponseSam.xsd"/>
+  <xs:element name="ReponseCalculSAMRetraite" type="ReponseCalculSAMRetraite"/>
+  <xs:complexType name="ReponseCalculSAMRetraite">
+    <xs:sequence>
+      <xs:element name="erreur" type="Erreur" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="rejet" type="RejetControleSyntaxiqueSemantique" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="reponseSam" type="ReponseSam" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\Erreur.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="Erreur" type="Erreur"/>
+  <xs:complexType name="Erreur">
+    <xs:sequence>
+      <xs:element name="erreur" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\RejetControleSyntaxiqueSemantique.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="RejetControleSyntaxiqueSemantique" type="RejetControleSyntaxiqueSemantique"/>
+  <xs:complexType name="RejetControleSyntaxiqueSemantique">
+    <xs:sequence>
+      <xs:element name="rejet" type="xs:string" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\ReponseSam.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="SalaireAnnuelMoyen.xsd"/>
+  <xs:include schemaLocation="PeriodeRegime.xsd"/>
+  <xs:element name="ReponseSam" type="ReponseSam"/>
+  <xs:complexType name="ReponseSam">
+    <xs:sequence>
+      <xs:element name="sams" type="SalaireAnnuelMoyen" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="periodes" type="PeriodeRegime" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\SalaireAnnuelMoyen.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="SalaireAnnuelMoyen" type="SalaireAnnuelMoyen"/>
+  <xs:complexType name="SalaireAnnuelMoyen">
+    <xs:sequence>
+      <xs:element name="salaireAnnuelMoyen" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="typeSAM" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\PeriodeRegime.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="PeriodeRegimeAppel.xsd"/>
+  <xs:include schemaLocation="IndicateurUtilisationSAM.xsd"/>
+  <xs:element name="PeriodeRegime" type="PeriodeRegime"/>
+  <xs:complexType name="PeriodeRegime">
+    <xs:sequence>
+      <xs:element name="cumulSalaireIJMaterniteConvertiEuro" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="cumulSalaireIJMaterniteRevalorise" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="coefficientRevalorisation" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="periodeRegimeAppel" type="PeriodeRegimeAppel" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="indicateurs" type="IndicateurUtilisationSAM" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\F:\download\WSDL%20&amp;%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\IndicateurUtilisationSAM.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+  <xs:element name="IndicateurUtilisationSAM" type="IndicateurUtilisationSAM"/>
+  <xs:complexType name="IndicateurUtilisationSAM">
+    <xs:sequence>
+      <xs:element name="topUtilisationSAM" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="typeSAM" minOccurs="1" maxOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8080/mocasamr-ws/CalculerSAMRetraite/v1</con:endpoint><con:endpoint>http://DESKTOP-C3FNEO8:8088/mockCalculerSAMRetraiteSoapBinding</con:endpoint></con:endpoints><con:operation id="b26ed631-0ecc-4371-80e2-d783336e4337" isOneWay="false" action="urn:CalculerSAMRetraite" name="calculerSAMRetraite" bindingOperationName="calculerSAMRetraite" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6df8d31b-472c-4a18-977a-84e0a2a17d3d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://DESKTOP-C3FNEO8:8088/mockCalculerSAMRetraiteSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:RequeteCalculSAMRetraite>\r
+         <v1:codeRegimeAppel>ss</v1:codeRegimeAppel>\r
+         <v1:typeDroit>ss</v1:typeDroit>\r
+         <v1:dateEffet>sssssss</v1:dateEffet>\r
+         <v1:cumulDureeAssuranceEtranger>?</v1:cumulDureeAssuranceEtranger>\r
+         <v1:assure>\r
+            <v1:dateNaissance>5555555</v1:dateNaissance>\r
+            <!--Optional:-->\r
+            <v1:dateDeces>?</v1:dateDeces>\r
+         </v1:assure>\r
+         <!--Zero or more repetitions:-->\r
+         <v1:dureesAssuranceProratisation>\r
+            <v1:nombreTrismestres>?</v1:nombreTrismestres>\r
+            <v1:regime>?</v1:regime>\r
+         </v1:dureesAssuranceProratisation>\r
+         <!--1 or more repetitions:-->\r
+         <v1:periodes>\r
+            <v1:annee>?</v1:annee>\r
+            <!--Optional:-->\r
+            <v1:dureeAssuranceCotisee>?</v1:dureeAssuranceCotisee>\r
+            <!--Optional:-->\r
+            <v1:dureeAssuranceCotiseeAssimilee>?</v1:dureeAssuranceCotiseeAssimilee>\r
+            <!--Optional:-->\r
+            <v1:dureeAssuranceRachetee>?</v1:dureeAssuranceRachetee>\r
+            <!--Optional:-->\r
+            <v1:cumulSalaire>?</v1:cumulSalaire>\r
+            <!--Optional:-->\r
+            <v1:deviseSalaire>?</v1:deviseSalaire>\r
+            <!--Optional:-->\r
+            <v1:cumulIJMaternite>?</v1:cumulIJMaternite>\r
+            <!--Optional:-->\r
+            <v1:deviseIJMaternite>?</v1:deviseIJMaternite>\r
+         </v1:periodes>\r
+      </v1:RequeteCalculSAMRetraite>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CalculerSAMRetraite"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="644b111c-c02b-4235-85a3-4981223fd9a1" port="8088" path="/mockCalculerSAMRetraiteSoapBinding" host="DESKTOP-C3FNEO8" name="CalculerSAMRetraiteSoapBindingMockService" dispatchResponseMessages="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:properties/><con:mockOperation name="calculerSAMRetraite" id="82112c80-89ec-475a-9bff-9038fb1ad581" interface="CalculerSAMRetraiteSoapBinding" operation="calculerSAMRetraite"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>QUERY_MATCH</con:dispatchStyle><con:response name="Response 1" id="052226ae-3c47-4f72-b065-61c93c78a44e" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.cnav.fr/ns/wsdl/rgcu/objets/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:ReponseCalculSAMRetraite>
+         <!--Optional:-->
+         <v1:erreur>
+            <v1:erreur>?</v1:erreur>
+         </v1:erreur>
+         <!--Optional:-->
+         <v1:rejet>
+            <v1:rejet>?</v1:rejet>
+         </v1:rejet>
+         <!--Optional:-->
+         <v1:reponseSam>
+            <!--1 or more repetitions:-->
+            <v1:sams>
+               <v1:salaireAnnuelMoyen>?</v1:salaireAnnuelMoyen>
+               <v1:typeSAM>?</v1:typeSAM>
+            </v1:sams>
+            <!--1 or more repetitions:-->
+            <v1:periodes>
+               <!--Optional:-->
+               <v1:cumulSalaireIJMaterniteConvertiEuro>?</v1:cumulSalaireIJMaterniteConvertiEuro>
+               <!--Optional:-->
+               <v1:cumulSalaireIJMaterniteRevalorise>?</v1:cumulSalaireIJMaterniteRevalorise>
+               <v1:coefficientRevalorisation>?</v1:coefficientRevalorisation>
+               <v1:periodeRegimeAppel>
+                  <v1:annee>?</v1:annee>
+                  <!--Optional:-->
+                  <v1:dureeAssuranceCotisee>?</v1:dureeAssuranceCotisee>
+                  <!--Optional:-->
+                  <v1:dureeAssuranceCotiseeAssimilee>?</v1:dureeAssuranceCotiseeAssimilee>
+                  <!--Optional:-->
+                  <v1:dureeAssuranceRachetee>?</v1:dureeAssuranceRachetee>
+                  <!--Optional:-->
+                  <v1:cumulSalaire>?</v1:cumulSalaire>
+                  <!--Optional:-->
+                  <v1:deviseSalaire>?</v1:deviseSalaire>
+                  <!--Optional:-->
+                  <v1:cumulIJMaternite>?</v1:cumulIJMaternite>
+                  <!--Optional:-->
+                  <v1:deviseIJMaternite>?</v1:deviseIJMaternite>
+               </v1:periodeRegimeAppel>
+               <!--1 or more repetitions:-->
+               <v1:indicateurs>
+                  <v1:topUtilisationSAM>?</v1:topUtilisationSAM>
+                  <v1:typeSAM>?</v1:typeSAM>
+               </v1:indicateurs>
+            </v1:periodes>
+         </v1:reponseSam>
+      </v1:ReponseCalculSAMRetraite>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:CalculerSAMRetraite"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

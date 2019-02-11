@@ -1,0 +1,38 @@
+2019-02-11 23:46:56,935 WARN  [SoapUI] Missing folder [C:\dev\crpcen\liquidation-batch\ws-soapui-mock\ext] for external libraries
+2019-02-11 23:46:57,091 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\eric\soapui-settings.xml]
+2019-02-11 23:46:57,575 INFO  [PluginManager] 0 plugins loaded in 1 ms
+2019-02-11 23:46:57,575 INFO  [DefaultSoapUICore] All plugins loaded
+2019-02-11 23:46:57,936 INFO  [WsdlProject] Loaded project from [file:/C:/dev/crpcen/liquidation-batch/ws-soapui-mock/src/test/resources/soapui/CalculSAMRetraite-1-20180618-soapui-project.xml]
+2019-02-11 23:46:57,938 INFO  [SoapUIMockServiceRunner] Running MockService [CalculerSAMRetraiteSoapBindingMockService] in project [CalculSAMRetraite_1_20180618]
+2019-02-11 23:46:57,938 INFO  [SoapUIMockServiceRunner] Press any key to terminate
+2019-02-11 23:46:58,061 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/xop.xsd with targetNamespace http://www.w3.org/2004/08/xop/include
+2019-02-11 23:46:58,070 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/XMLSchema.xsd with targetNamespace http://www.w3.org/2001/XMLSchema
+2019-02-11 23:46:58,070 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/xml.xsd with targetNamespace http://www.w3.org/XML/1998/namespace
+2019-02-11 23:46:58,071 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/swaref.xsd with targetNamespace http://ws-i.org/profiles/basic/1.1/xsd
+2019-02-11 23:46:58,071 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/xmime200505.xsd with targetNamespace http://www.w3.org/2005/05/xmlmime
+2019-02-11 23:46:58,071 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/xmime200411.xsd with targetNamespace http://www.w3.org/2004/11/xmlmime
+2019-02-11 23:46:58,071 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/soapEnvelope.xsd with targetNamespace http://schemas.xmlsoap.org/soap/envelope/
+2019-02-11 23:46:58,072 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/soapEncoding.xsd with targetNamespace http://schemas.xmlsoap.org/soap/encoding/
+2019-02-11 23:46:58,073 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/soapEnvelope12.xsd with targetNamespace http://www.w3.org/2003/05/soap-envelope
+2019-02-11 23:46:58,074 INFO  [SchemaUtils] Added default schema from file:/C:/Users/eric/.m2/repository/com/smartbear/soapui/soapui/5.4.0/soapui-5.4.0.jar!/com/eviware/soapui/resources/xsds/soapEncoding12.xsd with targetNamespace http://www.w3.org/2003/05/soap-encoding
+2019-02-11 23:46:58,074 INFO  [SchemaUtils] Loading schema types from [file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\services\v1\CalculSAMRetraite_1_20180618.wsdl]
+2019-02-11 23:46:58,075 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\services\v1\CalculSAMRetraite_1_20180618.wsdl
+2019-02-11 23:46:58,083 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\RequeteCalculSAMRetraite.xsd
+2019-02-11 23:46:58,084 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\Assure.xsd
+2019-02-11 23:46:58,085 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\CumulDureeAssurance.xsd
+2019-02-11 23:46:58,086 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\PeriodeRegimeAppel.xsd
+2019-02-11 23:46:58,086 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\ReponseCalculSAMRetraite.xsd
+2019-02-11 23:46:58,086 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\Erreur.xsd
+2019-02-11 23:46:58,087 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\RejetControleSyntaxiqueSemantique.xsd
+2019-02-11 23:46:58,087 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\ReponseSam.xsd
+2019-02-11 23:46:58,087 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\SalaireAnnuelMoyen.xsd
+2019-02-11 23:46:58,087 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\PeriodeRegime.xsd
+2019-02-11 23:46:58,088 INFO  [SchemaUtils] Getting schema file:\F:\download\WSDL%20&%20XSD\SAMR%202.3\wsdl\fr\cnav\www\ns\wsdl\rgcu\objets\v1\IndicateurUtilisationSAM.xsd
+2019-02-11 23:46:58,189 INFO  [WsdlMockDispatcher] Mounted WSDL for interface [CalculerSAMRetraiteSoapBinding] at [/mockCalculerSAMRetraiteSoapBinding?WSDL]
+2019-02-11 23:46:58,197 INFO  [jetty] Logging to com.eviware.soapui.support.log.JettyLogger@72b43104 via com.eviware.soapui.support.log.JettyLogger
+2019-02-11 23:46:58,214 INFO  [jetty] jetty-6.1.26
+2019-02-11 23:46:58,229 INFO  [jetty] Started JettyMockEngine$SoapUIConnector@0.0.0.0:8088
+2019-02-11 23:46:58,230 INFO  [JettyMockEngine] Started mockService [CalculerSAMRetraiteSoapBindingMockService] on port [8088] at path [/mockCalculerSAMRetraiteSoapBinding]
+2019-02-11 23:46:58,230 INFO  [SoapUIMockServiceRunner] MockService started on port 8088 at path [/mockCalculerSAMRetraiteSoapBinding]
+2019-02-11 23:46:58,230 INFO  [SoapUIMockServiceRunner] Started 1 runner
+2019-02-11 23:46:58,230 INFO  [SoapUIMockServiceRunner] time taken: 291ms

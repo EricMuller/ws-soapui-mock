@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<groupId>com.emu.apps.sample</groupId>
+    <artifactId>ws-soapui-mock</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.smartbear.soapui</groupId>
+            <artifactId>soapui</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>com.smartbear.soapui</groupId>
+                <artifactId>soapui-maven-plugin</artifactId>
+                <version>5.4.0</version>
+                <configuration>
+                    <projectFile>src/test/resources/soapui/CalculSAMRetraite-1-20180618-soapui-project.xml</projectFile>
+                    <outputFolder>${project.build.directory}/surefire-reports</outputFolder>
+                    <junitReport>true</junitReport>
+                    <host>http://127.0.0.1:8181</host>
+                    <mockService>CalculerSAMRetraiteSoapBindingMockService</mockService>
+                    <noBlock>true</noBlock>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>StartupMock</id>
+                        <goals>
+                            <goal>mock</goal>
+                        </goals>
+                        <phase>integration-test</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <!--<finalName>plandecontre.batch</finalName>-->
+    </build>
+
+    <repositories>
+        <repository>
+            <id>smartbear</id>
+            <name>smartbear repository</name>
+            <url>http://smartbearsoftware.com/repository/maven2/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>SmartBearPluginRepository</id>
+            <url>http://smartbearsoftware.com/repository/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
